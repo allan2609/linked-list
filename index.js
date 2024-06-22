@@ -104,6 +104,28 @@ class LinkedList {
     }
     console.log(result.join(" -> "));
   }
+  insertAt(value, index) {
+    const newNode = new Node(value);
+    let current = this.head;
+    let count = 0;
+    if (index < 0) {
+      return null;
+    }
+    if (index === 0) {
+      newNode.nextNode = this.head;
+      this.head = newNode;
+      return;
+    }
+    while (current !== null && count < index -1) {
+      current = current.nextNode;
+      count++;
+    }
+    if (current === null) {
+      return null;
+    }
+    newNode.nextNode = current.nextNode;
+    current.nextNode = newNode;
+  }
 }
 
 const list = new LinkedList();
