@@ -21,6 +21,11 @@ class LinkedList {
       current.nextNode = newNode;
     }
   }
+  prepend(value) {
+    const newNode = new Node(value);
+    newNode.nextNode = this.head;
+    this.head = newNode;
+  }
   toString() {
     let current = this.head;
     let result = [];
