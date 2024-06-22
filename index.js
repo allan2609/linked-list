@@ -45,6 +45,21 @@ class LinkedList {
     }
     return current;
   }
+  at(index) {
+    if (index < 0) {
+      return null;
+    }
+    let count = 0;
+    let current = this.head;
+    while (current !== null) {
+      if (count === index) {
+        return current;
+      }
+      current = current.nextNode;
+      count++;
+    }
+    return null;
+  }
   toString() {
     let current = this.head;
     let result = [];
@@ -57,3 +72,6 @@ class LinkedList {
 }
 
 const list = new LinkedList();
+list.append(1)
+list.append(2)
+list.append(3)
