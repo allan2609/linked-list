@@ -73,6 +73,16 @@ class LinkedList {
     }
     current.nextNode = null;
   }
+  contains(value) {
+    let current = this.head;
+    while (current !== null) {
+      if (current.value === value) {
+        return true;
+      }
+      current = current.nextNode;
+    }
+    return false;
+  }
   toString() {
     let current = this.head;
     let result = [];
