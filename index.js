@@ -35,6 +35,9 @@ class LinkedList {
     }
     return count;
   }
+  getHead() {
+    return this.head;
+  }
   toString() {
     let current = this.head;
     let result = [];
@@ -46,4 +49,4 @@ class LinkedList {
   }
 }
 
-const list = new LinkedList;
+const list = new LinkedList();
