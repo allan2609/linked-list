@@ -126,9 +126,27 @@ class LinkedList {
     newNode.nextNode = current.nextNode;
     current.nextNode = newNode;
   }
+  removeAt(index) {
+    if (index < 0) {
+      return null;
+    }
+    if (index === 0) {
+      if (this.head === null) {
+        return null;
+      }
+      this.head = this.head.nextNode;
+    }
+    let count = 0;
+    let current = this.head;
+    while (current !== null) {
+      if (count === index - 1) {
+        if (current.nextNode === null) {
+          return null;
+        }
+        current.nextNode = current.nextNode.nextNode;
+      }
+      current = current.nextNode;
+      count++;
+    }
+  }
 }
-
-const list = new LinkedList();
-list.append(1)
-list.append(2)
-list.append(3)
